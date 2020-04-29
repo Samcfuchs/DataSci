@@ -5,3 +5,8 @@
 *.csv
 *.zip
 *.json
+
+# Withheld Projects
+Ultimate/
+Reddit/
+groupme/
