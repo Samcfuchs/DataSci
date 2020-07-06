@@ -1,9 +1,39 @@
 * {
     margin:0;
     box-sizing: border-box;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    width: 600px;
+    margin: auto;
+
+    div#controls {
+        padding: 5px;
+
+        button {
+            background-color: #2c5cc5;
+            border: none;
+            border-radius: 8px;
+            padding:10px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+        }
+    }
 }
 
 svg#game {
     background-color: #eee;
-    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    .tile {
+        stroke: black;
+        stroke-width: 2px;
+        height: 80px;
+        width: 80px;
+    }
 }
