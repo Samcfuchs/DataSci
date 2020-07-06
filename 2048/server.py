@@ -8,6 +8,7 @@ app = Flask(__name__)
 def main():
     return render_template('index.html')
 
+game=0
 @app.route('/init', methods=['POST'])
 def init():
     global game
@@ -25,7 +26,8 @@ directions = { 'U': (1,-1), 'D': (1, 1), 'L': (0,-1), 'R': (0, 1) }
 
 @app.route('/move', methods=['POST'])
 def move():
-    d = request.form['direction']
+    d = request.args['direction']
     game.move(*directions[d.upper()])
     
-    return game.grid
+    response = jsonify({ 'board': [int(x) for x in game.grid.flatten()] })
+    return response

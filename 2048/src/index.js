@@ -54,5 +54,24 @@ function init() {
 }
 d3.select('button#init').on('click', init);
 
+function move(d) {
+    console.log('moving', d);
+    let b = JSON.stringify({direction: d});
+    console.log(b);
+    fetch('/move?direction=' + d, { method: 'POST' })
+        .then(response => response.json())
+        .then(json => draw_tiles(json.board));
+    /*
+    fetch('/move', {
+        method: 'POST', 
+        headers: { 'Content-type': 'application/json' },
+        body: b
+    }).then(response => response.json())
+        .then(console.log);
+        //.then(json => draw_tiles(json.board));
+    */
+}
 
-window.draw_tiles = draw_tiles
+
+window.draw_tiles = draw_tiles;
+window.move = move;
