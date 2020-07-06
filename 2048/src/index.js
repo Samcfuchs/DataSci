@@ -41,17 +41,18 @@ function color(n) {
 }
 
 function draw_tiles(t) {
+    console.log(t)
     let tiles = main.selectAll(".tile")
-    tiles.data(t)
-        .attr('fill', function (d) { return color(d) });
-    
-    console.log(tiles);
-    console.log("Colored the tiles");
-    for (var i=0; i<16; i++) {
-
-    }
+    tiles.data(t).attr('fill', function (d) { return color(d) });
 }
 
-draw_tiles(values)
+function init() {
+    console.log('initting')
+    fetch('/init', { method: 'POST' })
+        .then(response => response.json())
+        .then(json => draw_tiles(json.board));
+}
+d3.select('button#init').on('click', init);
+
 
 window.draw_tiles = draw_tiles
