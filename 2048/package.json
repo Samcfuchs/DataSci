@@ -1,0 +1,25 @@
+{
+  "name": "2048",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress --mode=development",
+    "watch": "webpack --progress --watch"
+  },
+  "author": "Sam Fuchs",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^5.16.0"
+  },
+  "devDependencies": {
+    "css-loader": "^3.6.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
